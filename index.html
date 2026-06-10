@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARCHIVE ROOM : ALL PRODUCTS | VERONE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- VERONE STYLE GUIDE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --cream: #F2EFE9;
+            --deep-green: #1A3626;
+            --dark-brown: #3C2A21;
+            --gold: #D4AF37;
+            --black: #111827;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--black);
+            background-color: var(--cream);
+        }
+
+        /* =====================================================
+           VERONE DEFAULT TYPOGRAPHY STYLE GUIDE
+           절대 기준: Inika / Inter / font-style normal
+        ===================================================== */
+        .typo-brand {
+            font-family: 'Inika', serif !important;
+            font-weight: 600 !important;
+            font-size: 128px !important;
+            line-height: 100% !important;
+            letter-spacing: 0.06em !important;
+            font-style: normal !important;
+        }
+
+        .typo-hero-01 {
+            font-family: 'Inika', serif !important;
+            font-weight: 600 !important;
+            font-size: 80px !important;
+            line-height: 110% !important;
+            letter-spacing: -0.02em !important;
+            font-style: normal !important;
+        }
+
+        .typo-page-01 {
+            font-family: 'Inika', serif !important;
+            font-weight: 600 !important;
+            font-size: 64px !important;
+            line-height: 110% !important;
+            letter-spacing: 0 !important;
+            font-style: normal !important;
+        }
+
+        .typo-sec-01 {
+            font-family: 'Inika', serif !important;
+            font-weight: 600 !important;
+            font-size: 48px !important;
+            line-height: 120% !important;
+            letter-spacing: 0 !important;
+            font-style: normal !important;
+        }
+
+        .typo-sec-02 {
+            font-family: 'Inika', serif !important;
+            font-weight: 600 !important;
+            font-size: 40px !important;
+            line-height: 120% !important;
+            letter-spacing: 0 !important;
+            font-style: normal !important;
+        }
+
+        .typo-sec-03 {
+            font-family: 'Inika', serif !important;
+            font-weight: 600 !important;
+            font-size: 24px !important;
+            line-height: 120% !important;
+            letter-spacing: 0.02em !important;
+            font-style: normal !important;
+        }
+
+        .typo-sec-04 {
+            font-family: 'Inika', serif !important;
+            font-weight: 300 !important;
+            font-size: 24px !important;
+            line-height: 120% !important;
+            letter-spacing: 0.02em !important;
+            font-style: normal !important;
+        }
+
+        .typo-body-01 {
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 400 !important;
+            font-size: 16px !important;
+            line-height: 160% !important;
+            letter-spacing: 0 !important;
+            font-style: normal !important;
+        }
+
+        .typo-body-02 {
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 400 !important;
+            font-size: 14px !important;
+            line-height: 160% !important;
+            letter-spacing: 0 !important;
+            font-style: normal !important;
+        }
+
+        .typo-item-01 {
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 600 !important;
+            font-size: 12px !important;
+            line-height: 140% !important;
+            letter-spacing: 0.02em !important;
+            font-style: normal !important;
+        }
+
+        .typo-item-02 {
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 600 !important;
+            font-size: 16px !important;
+            line-height: 140% !important;
+            letter-spacing: 0 !important;
+            font-style: normal !important;
+        }
+
+        .typo-sale-01 {
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 600 !important;
+            font-size: 18px !important;
+            line-height: 140% !important;
+            letter-spacing: 0 !important;
+            font-style: normal !important;
+        }
+
+        .typo-menu-01 {
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 600 !important;
+            font-size: 14px !important;
+            line-height: 140% !important;
+            letter-spacing: 0.02em !important;
+            font-style: normal !important;
+        }
+
+        .typo-menu-02 {
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 600 !important;
+            font-size: 12px !important;
+            line-height: 140% !important;
+            letter-spacing: 0.02em !important;
+            font-style: normal !important;
+        }
+
+        .typo-label-01 {
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 700 !important;
+            font-size: 12px !important;
+            line-height: 140% !important;
+            letter-spacing: 0.08em !important;
+            font-style: normal !important;
+        }
+
+        .wireframe-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #6b7280;
+            background-color: #e5e5e5;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.12;
+            filter: grayscale(100%) contrast(150%);
+            z-index: 9999;
+            mix-blend-mode: multiply;
+        }
+
+        .category-section {
+            scroll-margin-top: 180px;
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--cream); }
+        ::-webkit-scrollbar-thumb { background: var(--dark-brown); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- 글로벌 헤더 -->
+    <header class="border-b border-[#3C2A21]/20 sticky top-0 w-full bg-[#F2EFE9]/90 backdrop-blur-md z-50 transition-all duration-300">
+        <nav class="grid grid-cols-3 items-center px-8 xl:px-16 py-4 max-w-[1920px] mx-auto">
+            <div class="justify-self-start">
+                <a href="#" class="typo-menu-01 w-32 h-10 flex items-center justify-center text-black bg-white border-2 border-black shrink-0 hover:bg-black hover:text-white transition-colors uppercase">
+                    VERONE
+                </a>
+            </div>
+
+            <div class="hidden lg:flex justify-self-center whitespace-nowrap">
+                <ul class="flex gap-8 typo-menu-01 uppercase items-center text-[#1A3626]">
+                    <li><a href="#" class="border-b-2 border-[#1A3626] pb-1">SHOP ALL</a></li>
+                    <li><a href="#" class="hover:border-b-2 hover:border-[#1A3626] pb-1">UNIFORM</a></li>
+                    <li><a href="#" class="hover:border-b-2 hover:border-[#1A3626] pb-1">ARCHIVE</a></li>
+                </ul>
+            </div>
+
+            <div class="justify-self-end flex space-x-4">
+                <div class="typo-menu-02 w-8 h-8 flex items-center justify-center border border-gray-400 bg-white hover:bg-black hover:text-white cursor-pointer">[👤]</div>
+                <div class="typo-menu-02 w-8 h-8 flex items-center justify-center border border-gray-400 bg-white hover:bg-black hover:text-white cursor-pointer">[🖤]</div>
+                <div class="typo-menu-02 w-8 h-8 flex items-center justify-center border border-gray-400 bg-white hover:bg-black hover:text-white cursor-pointer">[🛒]</div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 페이지 대표 히어로 -->
+        <section class="relative w-full h-[300px] lg:h-[400px] flex flex-col items-center justify-center overflow-hidden bg-[#1A3626] border-b-[8px] border-[#3C2A21]">
+            <img src="./images/Sub.png" alt="Archive Room Background" class="absolute inset-0 w-full h-full object-cover z-0">
+            <div class="absolute inset-0 bg-black/40 z-0 pointer-events-none"></div>
+
+            <div class="relative z-10 text-center flex flex-col items-center mt-8">
+                <span class="typo-label-01 uppercase mb-4 text-[#D4AF37]">Archive Room</span>
+                <h1 class="typo-page-01 text-[#F2EFE9] drop-shadow-xl uppercase">All Products</h1>
+            </div>
+        </section>
+
+        <!-- 메인 콘텐츠 영역 -->
+        <div class="max-w-[1920px] mx-auto w-full px-8 xl:px-16 py-16 flex flex-col lg:flex-row gap-12 xl:gap-20">
+
+            <!-- 좌측 사이드바 -->
+            <aside class="w-full lg:w-1/5 shrink-0 hidden lg:block">
+                <div class="sticky top-[120px] flex flex-col gap-12">
+                    <div>
+                        <h3 class="typo-sec-03 uppercase mb-6 border-b-2 border-black pb-2 text-[#1A3626]">Archive Index</h3>
+                        <ul class="flex flex-col gap-4 typo-menu-01 text-gray-500 uppercase">
+                            <li><a href="#sec-uniform" class="hover:text-black transition-colors text-black flex items-center justify-between"><span>01. Uniform</span><span class="typo-menu-02">3</span></a></li>
+                            <li><a href="#sec-windbreaker" class="hover:text-black transition-colors flex items-center justify-between"><span>02. Windbreaker</span><span class="typo-menu-02">3</span></a></li>
+                            <li><a href="#sec-bottom" class="hover:text-black transition-colors flex items-center justify-between"><span>03. Bottom</span><span class="typo-menu-02">2</span></a></li>
+                            <li><a href="#sec-varsity" class="hover:text-black transition-colors flex items-center justify-between"><span>04. Varsity Jacket</span><span class="typo-menu-02">1</span></a></li>
+                            <li><a href="#sec-hoodie" class="hover:text-black transition-colors flex items-center justify-between"><span>05. Hoodie</span><span class="typo-menu-02">3</span></a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="typo-sec-03 uppercase mb-6 border-b border-gray-300 pb-2 text-[#111827]">Color</h3>
+                        <div class="grid grid-cols-5 gap-3">
+                            <button class="w-8 h-8 bg-[#1A3626] border border-black hover:border-2 transition-all shadow-sm" title="Deep Green"></button>
+                            <button class="w-8 h-8 bg-[#F2EFE9] border border-gray-400 hover:border-black transition-all shadow-sm" title="Cream"></button>
+                            <button class="w-8 h-8 bg-[#3C2A21] border border-gray-400 hover:border-black transition-all shadow-sm" title="Dark Brown"></button>
+                            <button class="w-8 h-8 bg-black border border-gray-400 hover:border-black transition-all shadow-sm" title="Black"></button>
+                            <button class="w-8 h-8 bg-white border border-gray-400 hover:border-black transition-all shadow-sm" title="White"></button>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- 우측 상품 섹션 -->
+            <div class="w-full lg:w-4/5">
+
+                <!-- 모바일 가로 네비게이션 -->
+                <div class="lg:hidden w-full mb-8 pb-4 border-b border-[#3C2A21]/20 sticky top-[73px] bg-[#F2EFE9]/95 backdrop-blur-md z-40 pt-4">
+                    <ul class="flex overflow-x-auto no-scrollbar gap-6 typo-menu-01 text-gray-500 uppercase whitespace-nowrap">
+                        <li><a href="#sec-uniform" class="hover:text-black text-black">01. Uniform</a></li>
+                        <li><a href="#sec-windbreaker" class="hover:text-black">02. Windbreaker</a></li>
+                        <li><a href="#sec-bottom" class="hover:text-black">03. Bottom</a></li>
+                        <li><a href="#sec-varsity" class="hover:text-black">04. Varsity Jacket</a></li>
+                        <li><a href="#sec-hoodie" class="hover:text-black">05. Hoodie</a></li>
+                    </ul>
+                </div>
+
+                <!-- 01. UNIFORM -->
+                <section id="sec-uniform" class="category-section mb-32">
+                    <div class="flex items-end gap-4 mb-8 pb-2 border-b border-[#3C2A21]/20">
+                        <h2 class="typo-sec-01 text-[#1A3626] uppercase">UNIFORM</h2>
+                        <span class="typo-item-01 text-gray-400 mb-1 uppercase">3 Items</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-12">
+                        <a href="#" class="product-card group md:col-span-2 md:row-span-2 flex flex-col cursor-pointer">
+                            <div class="w-full aspect-[3/4] wireframe-box bg-[#1A3626] border border-gray-300 group-hover:border-black transition-colors relative mb-4 overflow-hidden">
+                                <img src="./images/Home.png" alt="1994 헤리티지 홈 유니폼" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
+                            </div>
+                            <div class="flex flex-col items-start mt-2">
+                                <p class="typo-item-01 text-[#1A3626] uppercase mb-1">Deep Green (Home)</p>
+                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors">1994 헤리티지 홈 유니폼</h3>
+                                <span class="typo-sale-01 mt-2 text-[#111827]">89,000 KRW</span>
+                            </div>
+                        </a>
+
+                        <a href="#" class="product-card group flex flex-col cursor-pointer">
+                            <div class="w-full aspect-[3/4] wireframe-box bg-[#F2EFE9] border border-gray-300 group-hover:border-black transition-colors relative mb-4 overflow-hidden">
+                                <img src="./images/Away.png" alt="오리지널 어웨이 유니폼" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
+                            </div>
+                            <div class="flex flex-col items-start mt-2">
+                                <p class="typo-item-01 text-gray-500 uppercase mb-1">Cream (Away)</p>
+                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors">오리지널 어웨이 유니폼</h3>
+                                <span class="typo-sale-01 mt-1 text-[#111827]">89,000 KRW</span>
+                            </div>
+                        </a>
+
+                        <a href="#" class="product-card group flex flex-col cursor-pointer">
+                            <div class="w-full aspect-[3/4] wireframe-box bg-[#3C2A21] border border-gray-300 relative mb-4 overflow-hidden">
+                                <img src="./images/Third.png" alt="써드 얼터너티브 유니폼" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
+                            </div>
+                            <div class="flex flex-col items-start mt-2">
+                                <p class="typo-item-01 text-gray-500 uppercase mb-1">Dark Brown (Third)</p>
+                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors">써드 얼터너티브 유니폼</h3>
+                                <span class="typo-sale-01 mt-1 text-[#111827]">99,000 KRW</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Editorial Block -->
+                <section class="grid grid-cols-1 lg:grid-cols-2 mb-32 border-y border-[#3C2A21]/20">
+                    <div class="relative p-12 lg:p-16 flex flex-col justify-center bg-[#1A3626] text-[#F2EFE9] min-h-[400px]">
+                        <div class="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none" style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E&quot;);"></div>
+                        <div class="relative z-10">
+                            <span class="typo-label-01 mb-4 block text-[#D4AF37] uppercase">HERITAGE &amp; CRAFT</span>
+                            <h2 class="typo-sec-01 mb-6 text-[#F2EFE9] uppercase">BUILT ON<br>TIMELESS<br>MATERIALS</h2>
+                            <p class="typo-body-02 text-gray-300 max-w-md">
+                                오랜 시간이 지나도 변치 않는 가치는 디테일에서 시작됩니다.<br>
+                                베론의 아카이브 컬렉션은 90년대 오리지널 유니폼의 밀도 높은 직조 방식과 바스락거리는 나일론의 질감을 완벽히 복각했습니다.<br>
+                                피부에 닿는 촉각적 향수까지 재현합니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="relative p-12 lg:p-16 flex flex-col items-center justify-center bg-[#F2EFE9] min-h-[400px] border-t lg:border-t-0 lg:border-l border-[#3C2A21]/20">
+                        <div class="absolute inset-0 opacity-10 mix-blend-multiply" style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='woven'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.3 0.01' numOctaves='2' result='noise'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.8 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23woven)'/%3E%3C/svg%3E&quot;);"></div>
+                        <div class="relative z-10 w-full aspect-square max-w-[320px] max-h-[320px] border border-[#3C2A21]/10 shadow-lg overflow-hidden bg-white">
+                            <img src="./images/Cotton.png" alt="원단 초근접 디테일 컷" class="w-full h-full object-cover">
+                        </div>
+                        <span class="relative z-10 mt-6 typo-item-01 text-gray-500 block uppercase text-center">Fabric Texture Detail</span>
+                    </div>
+                </section>
+
+                <!-- 02. WINDBREAKER -->
+                <section id="sec-windbreaker" class="category-section mb-32">
+                    <div class="flex items-end gap-4 mb-8 pb-2 border-b border-[#3C2A21]/20">
+                        <h2 class="typo-sec-01 text-[#1A3626] uppercase">WINDBREAKER</h2>
+                        <span class="typo-item-01 text-gray-400 mb-1 uppercase">3 Items</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-12">
+                        <a href="#" class="product-card group flex flex-col cursor-pointer">
+                            <div class="w-full aspect-[3/4] wireframe-box bg-black border border-gray-200 group-hover:border-black transition-colors relative mb-4 overflow-hidden">
+                                <img src="./images/WindBlack.png" alt="아카이브 윈드브레이커 블랙" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
+                            </div>
+                            <div class="flex flex-col items-start mt-2">
+                                <p class="typo-item-01 text-gray-500 uppercase mb-1">Black</p>
+                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors">아카이브 윈드브레이커</h3>
+                                <span class="typo-sale-01 mt-1 text-[#111827]">129,000 KRW</span>
+                            </div>
+                        </a>
+
+                        <a href="#" class="product-card group flex flex-col cursor-pointer">
+                            <div class="w-full aspect-[3/4] wireframe-box bg-[#1A3626] border border-gray-200 group-hover:border-black transition-colors relative mb-4 overflow-hidden">
+                                <img src="./images/WindGreen.png" alt="아카이브 윈드브레이커 딥그린" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
+                            </div>
+                            <div class="flex flex-col items-start mt-2">
+                                <p class="typo-item-01 text-gray-500 uppercase mb-1">Deep Green</p>
+                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors">아카이브 윈드브레이커</h3>
+                                <span class="typo-sale-01 mt-1 text-[#111827]">129,000 KRW</span>
+                            </div>
+                        </a>
+
+                        <a href="#" class="product-card group flex flex-col cursor-pointer">
+                            <div class="w-full aspect-[3/4] wireframe-box bg-[#3C2A21] border border-gray-200 group-hover:border-black transition-colors relative mb-4 overflow-hidden">
+                                <img src="./images/WindBrown.png" alt="아카이브 윈드브레이커 다크브라운" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
+                            </div>
+                            <div class="flex flex-col items-start mt-2">
+                                <p class="typo-item-01 text-gray-500 uppercase mb-1">Dark Brown</p>
+                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors">아카이브 윈드브레이커</h3>
+                                <span class="typo-sale-01 mt-1 text-[#111827]">129,000 KRW</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- 03. BOTTOM -->
+                <section id="sec-bottom" class="category-section mb-32">
+                    <div class="flex items-end gap-4 mb-8 pb-2 border-b border-[#3C2A21]/20">
+                        <h2 class="typo-sec-01 text-[#1A3626] uppercase">BOTTOM</h2>
+                        <span class="typo-item-01 text-gray-400 mb-1 uppercase">2 Items</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-12">
+                        <a href="#" class="product-card group flex flex-col cursor-pointer">
+                            <div class="w-full aspect-[3/4] wireframe-box bg-white border border-gray-300 group-hover:border-black transition-colors relative mb-4 overflow-hidden">
+                                <img src="./images/WhitePants.png" alt="투라인 트랙 팬츠 화이트" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
+                            </div>
+                            <div class="flex flex-col items-start mt-2">
+                                <p class="typo-item-01 text-gray-500 uppercase mb-1">White</p>
+                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors">투라인 트랙 팬츠</h3>
+                                <span class="typo-sale-01 mt-1 text-[#111827]">79,000 KRW</span>
+                            </div>
+                        </a>
+
+                        <a href="#" class="product-card group flex flex-col cursor-pointer">
+                            <div class="w-full aspect-[3/4] wireframe-box bg-black border border-gray-200 group-hover:border-black transition-colors relative mb-4 overflow-hidden">
+                                <img src="./images/BlackPants.png" alt="투라인 트랙 팬츠 블랙" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
+                            </div>
+                            <div class="flex flex-col items-start mt-2">
+                                <p class="typo-item-01 text-gray-500 uppercase mb-1">Black</p>
+                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors">투라인 트랙 팬츠</h3>
+                                <span class="typo-sale-01 mt-1 text-[#111827]">79,000 KRW</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- 04. VARSITY JACKET -->
+                <section id="sec-varsity" class="category-section mb-32">
+                    <div class="flex items-end gap-4 mb-8 pb-2 border-b border-[#3C2A21]/20">
+                        <h2 class="typo-sec-01 text-[#1A3626] uppercase">VARSITY JACKET</h2>
+                        <span class="typo-item-01 text-gray-400 mb-1 uppercase">1 Item</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-12">
+                        <a href="#" class="product-card group flex flex-col cursor-pointer">
+                            <div class="w-full aspect-[3/4] wireframe-box bg-[#1A3626] border border-gray-200 group-hover:border-black transition-colors relative mb-4 overflow-hidden">
+                                <img src="./images/Jumper.png" alt="아이코닉 바시티 재킷" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
+                            </div>
+                            <div class="flex flex-col items-start mt-2">
+                                <p class="typo-item-01 text-gray-500 uppercase mb-1">Deep Green</p>
+                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors">아이코닉 바시티 재킷</h3>
+                                <span class="typo-sale-01 mt-1 text-[#111827]">159,000 KRW</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- 05. HOODIE -->
+                <section id="sec-hoodie" class="category-section mb-10">
+                    <div class="flex items-end gap-4 mb-8 pb-2 border-b border-[#3C2A21]/20">
+                        <h2 class="typo-sec-01 text-[#1A3626] uppercase">HOODIE</h2>
+                        <span class="typo-item-01 text-gray-400 mb-1 uppercase">3 Items</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-12">
+                        <a href="#" class="product-card group flex flex-col cursor-pointer">
+                            <div class="w-full aspect-[3/4] wireframe-box bg-[#1A3626] border border-gray-200 group-hover:border-black transition-colors relative mb-4 overflow-hidden">
+                                <img src="./images/GreenHoodie.png" alt="에센셜 아치 로고 후디 딥그린" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
+                            </div>
+                            <div class="flex flex-col items-start mt-2">
+                                <p class="typo-item-01 text-gray-500 uppercase mb-1">Deep Green</p>
+                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors">에센셜 아치 로고 후디</h3>
+                                <span class="typo-sale-01 mt-1 text-[#111827]">79,000 KRW</span>
+                            </div>
+                        </a>
+
+                        <a href="#" class="product-card group flex flex-col cursor-pointer">
+                            <div class="w-full aspect-[3/4] wireframe-box bg-[#3C2A21] border border-gray-200 group-hover:border-black transition-colors relative mb-4 overflow-hidden">
+                                <img src="./images/BrownHoodie.png" alt="에센셜 아치 로고 후디 다크브라운" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
+                            </div>
+                            <div class="flex flex-col items-start mt-2">
+                                <p class="typo-item-01 text-gray-500 uppercase mb-1">Dark Brown</p>
+                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors">에센셜 아치 로고 후디</h3>
+                                <span class="typo-sale-01 mt-1 text-[#111827]">79,000 KRW</span>
+                            </div>
+                        </a>
+
+                        <a href="#" class="product-card group flex flex-col cursor-pointer">
+                            <div class="w-full aspect-[3/4] wireframe-box bg-[#E5E7EB] border border-gray-300 relative mb-4 overflow-hidden">
+                                <span class="typo-item-01 text-gray-500 transform transition-transform duration-500 group-hover:scale-110 block">[후드 멜란지]</span>
+                            </div>
+                            <div class="flex flex-col items-start mt-2">
+                                <p class="typo-item-01 text-gray-500 uppercase mb-1">Melange Gray</p>
+                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors">에센셜 아치 로고 후디</h3>
+                                <span class="typo-sale-01 mt-1 text-[#111827]">79,000 KRW</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#111] text-[#F2EFE9] py-16 border-t-[8px] border-[#1A3626] text-center mt-10 overflow-hidden">
+        <div class="typo-brand mb-4 text-white">VERONE</div>
+        <div class="typo-label-01 text-gray-500 uppercase">Classic Never Dies. Since 1994.</div>
+        <div class="mt-8 typo-menu-02 text-gray-700 uppercase">
+            &copy; 2026 VERONE SPORTSWEAR. ALL RIGHTS RESERVED.
+        </div>
+    </footer>
+
+</body>
+</html>
