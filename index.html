@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome 아이콘 로드 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         /* 새로운 INIKA / INTER 스타일 가이드 반영 */
         :root {
@@ -69,7 +72,6 @@
 </head>
 <body class="antialiased">
 
-    <!-- 글로벌 헤더 -->
     <header class="border-b border-[#3C2A21]/20 sticky top-0 w-full bg-[#F2EFE9]/90 backdrop-blur-md z-50 transition-all duration-300">
         <nav class="grid grid-cols-3 items-center px-8 xl:px-16 py-4 max-w-[1920px] mx-auto">
             <div class="justify-self-start">
@@ -86,16 +88,21 @@
                 </ul>
             </div>
             
-            <!-- 우측 상단 유저 액션: 마이페이지, 좋아요, 장바구니 -->
+            <!-- 우측 상단 유저 액션: 마이페이지, 좋아요, 장바구니 (FontAwesome 아이콘 적용) -->
             <div class="justify-self-end flex space-x-4">
-                <div class="w-8 h-8 flex items-center justify-center text-xs border border-gray-400 bg-white hover:bg-black hover:text-white cursor-pointer" title="마이페이지">[👤]</div>
-                <div class="w-8 h-8 flex items-center justify-center text-xs border border-gray-400 bg-white hover:bg-black hover:text-white cursor-pointer" title="위시리스트">[🖤]</div>
-                <div class="w-8 h-8 flex items-center justify-center text-xs border border-gray-400 bg-white hover:bg-black hover:text-white cursor-pointer" title="장바구니">[🛒]</div>
+                <div class="w-8 h-8 flex items-center justify-center text-[14px] border border-gray-400 bg-white hover:bg-black hover:text-white cursor-pointer transition-colors" title="마이페이지">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+                <div class="w-8 h-8 flex items-center justify-center text-[14px] border border-gray-400 bg-white hover:bg-black hover:text-white cursor-pointer transition-colors" title="위시리스트">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="w-8 h-8 flex items-center justify-center text-[14px] border border-gray-400 bg-white hover:bg-black hover:text-white cursor-pointer transition-colors" title="장바구니">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
             </div>
         </nav>
     </header>
 
-    <!-- 모바일 전용 Sticky 필터 바 (데스크탑에서는 숨김) -->
     <div class="lg:hidden w-full border-b border-[#3C2A21]/20 sticky top-[73px] bg-[#F2EFE9]/95 backdrop-blur-md z-40">
         <div class="max-w-[1920px] mx-auto px-8 py-4 flex justify-between items-center gap-4">
             <ul class="flex overflow-x-auto no-scrollbar gap-6 typo-menu-02 text-gray-500 uppercase whitespace-nowrap w-full">
@@ -116,12 +123,11 @@
             
             <div class="relative z-10 text-center flex flex-col items-center mt-8">
                 <span class="typo-sec-05 mb-4 uppercase">Archive Room</span>
-                <h1 class="typo-brand text-[#F2EFE9] italic drop-shadow-xl uppercase">All Products</h1>
+                <!-- italic 제거 -->
+                <h1 class="typo-brand text-[#F2EFE9] drop-shadow-xl uppercase">All Products</h1>
             </div>
         </section>
 
-        <!-- 메인 콘텐츠 영역 (좌측 사이드바 + 우측 상품 그리드) -->
-        <!-- 버튼 정렬을 위해 relative 추가 및 전체 여백 통일 -->
         <div class="max-w-[1920px] mx-auto w-full px-8 xl:px-16 py-20 flex flex-col lg:flex-row gap-12 lg:gap-20 relative">
             
             <!-- 좌측 사이드바 (데스크탑 전용) -->
@@ -138,12 +144,13 @@
                 </div>
                 <div>
                     <h3 class="typo-sec-03 uppercase mb-6 border-b border-gray-300 pb-2 text-black">Color Filter</h3>
+                    <!-- 기능 없이 단순 보여주기 용도로 전환 (cursor-default 적용) -->
                     <div class="grid grid-cols-5 gap-3">
-                        <button class="w-8 h-8 bg-[#1A3626] border border-black hover:border-2 shadow-sm" title="Deep Green"></button>
-                        <button class="w-8 h-8 bg-[#F2EFE9] border border-gray-400 hover:border-black shadow-sm" title="Cream"></button>
-                        <button class="w-8 h-8 bg-[#3C2A21] border border-gray-400 hover:border-black shadow-sm" title="Dark Brown"></button>
-                        <button class="w-8 h-8 bg-black border border-gray-400 hover:border-black shadow-sm" title="Black"></button>
-                        <button class="w-8 h-8 bg-white border border-gray-400 hover:border-black shadow-sm" title="White"></button>
+                        <div class="w-8 h-8 bg-[#1A3626] border border-black shadow-sm cursor-default" title="Deep Green"></div>
+                        <div class="w-8 h-8 bg-[#F2EFE9] border border-gray-400 shadow-sm cursor-default" title="Cream"></div>
+                        <div class="w-8 h-8 bg-[#3C2A21] border border-gray-400 shadow-sm cursor-default" title="Dark Brown"></div>
+                        <div class="w-8 h-8 bg-black border border-gray-400 shadow-sm cursor-default" title="Black"></div>
+                        <div class="w-8 h-8 bg-white border border-gray-400 shadow-sm cursor-default" title="White"></div>
                     </div>
                 </div>
             </aside>
@@ -151,19 +158,17 @@
             <!-- 우측 상품 영역 래퍼 -->
             <div class="flex-1 w-full">
             
-                <!-- 01. UNIFORM 섹션 -->
                 <section id="sec-uniform" class="category-section mb-32">
                     <div class="flex items-end gap-4 mb-12 pb-2 border-b border-[#3C2A21]/20">
+                        <!-- italic 제거 -->
                         <h2 class="typo-sec-01 text-[#1A3626]">UNIFORM</h2>
                         <span class="typo-item-01 text-gray-400 mb-2">3 Items</span>
                     </div>
 
-                    <!-- 여백을 시원하게 늘린 그리드 (사이드바 공간 고려하여 xl:grid-cols-3으로 조정) -->
                     <div class="grid grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-16 md:gap-x-10">
-                        <!-- 홈 유니폼 (Deep Green) -->
+                        <!-- 홈 유니폼 (Deep Green) - 배경 화이트 및 보더 규칙 통일 -->
                         <a href="product_detail_home_uniform.html" class="group flex flex-col cursor-pointer">
-                            <!-- border, shadow-sm 제거하여 다른 아이템들과 동일하게 변경 -->
-                            <div class="w-full aspect-[3/4] bg-[#1A3626] overflow-hidden mb-4 relative">
+                            <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
                                 <img src="./images/Home.png" alt="베론 딥그린 홈 유니폼" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
                                 <div class="absolute top-3 left-3 bg-[#D4AF37] text-black text-[10px] px-2 py-1 font-bold tracking-widest">BEST</div>
                             </div>
@@ -176,7 +181,7 @@
 
                         <!-- 어웨이 유니폼 (Cream) -->
                         <a href="#" class="group flex flex-col cursor-pointer">
-                            <div class="w-full aspect-[3/4] bg-white overflow-hidden mb-4 relative">
+                            <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
                                 <img src="./images/Away.png" alt="오리지널 어웨이 유니폼" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
                             </div>
                             <div class="flex flex-col items-start mt-2">
@@ -188,7 +193,7 @@
 
                         <!-- 써드 유니폼 (Dark Brown) -->
                         <a href="#" class="group flex flex-col cursor-pointer">
-                            <div class="w-full aspect-[3/4] bg-white overflow-hidden mb-4 relative">
+                            <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
                                 <img src="./images/Third.png" alt="써드 얼터너티브 유니폼" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
                             </div>
                             <div class="flex flex-col items-start mt-2">
@@ -200,170 +205,160 @@
                     </div>
                 </section>
 
-                <!-- 에디토리얼 블록: BUILT ON TIMELESS MATERIALS (시각적 촉각 극대화) -->
-            <section class="grid grid-cols-1 lg:grid-cols-2 mb-32 border-y border-[#3C2A21]/20">
-                <!-- Left: Text Block (Deep Green) -->
-                <div class="relative p-12 lg:p-20 flex flex-col justify-center bg-[#1A3626] text-[#F2EFE9] min-h-[500px]">
-                    <div class="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none" style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E&quot;);"></div>
-                    <div class="relative z-10">
-                        <span class="typo-sec-05 mb-6 block uppercase">Heritage & Craft</span>
-                        <h2 class="typo-sec-01 mb-8 leading-tight text-[#F2EFE9]">BUILT ON<br>TIMELESS<br>MATERIALS</h2>
-                        <div class="typo-body-01 text-gray-300 max-w-2xl break-keep space-y-4">
-                            <p>오랜 시간이 지나도 변치 않는 가치는 디테일에서 시작됩니다.</p>
-                            <p>베론의 아카이브 컬렉션은 90년대 오리지널 유니폼의 밀도 높은 직조 방식과 바스락거리는 나일론의 질감을 완벽히 복각했습니다.</p>
-                            <p>피부에 닿는 촉각적 향수까지 재현합니다.</p>
+                <section class="grid grid-cols-1 lg:grid-cols-2 mb-32 border-y border-[#3C2A21]/20">
+                    <!-- Left: Text Block (Deep Green) -->
+                    <div class="relative p-12 lg:p-20 flex flex-col justify-center bg-[#1A3626] text-[#F2EFE9] min-h-[500px]">
+                        <div class="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none" style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E&quot;);"></div>
+                        <div class="relative z-10">
+                            <span class="typo-sec-05 mb-6 block uppercase">Heritage & Craft</span>
+                            <h2 class="typo-sec-01 mb-8 leading-tight text-[#F2EFE9]">BUILT ON<br>TIMELESS<br>MATERIALS</h2>
+                            <div class="typo-body-01 text-gray-300 max-w-2xl break-keep space-y-4">
+                                <p>오랜 시간이 지나도 변치 않는 가치는 디테일에서 시작됩니다.</p>
+                                <p>베론의 아카이브 컬렉션은 90년대 오리지널 유니폼의 밀도 높은 직조 방식과 바스락거리는 나일론의 질감을 완벽히 복각했습니다.</p>
+                                <p>피부에 닿는 촉각적 향수까지 재현합니다.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Right: Image Block (실제 Cotton 이미지 매크로 컷 적용) -->
-                <div class="relative p-12 lg:p-20 flex flex-col items-center justify-center bg-[#F2EFE9] min-h-[500px] border-t lg:border-t-0 lg:border-l border-[#3C2A21]/20">
-                    <div class="absolute inset-0 opacity-10 mix-blend-multiply" style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='woven'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.3 0.01' numOctaves='2' result='noise'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.8 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23woven)'/%3E%3C/svg%3E&quot;);"></div>
                     
-                    <div class="relative z-10 w-full aspect-square max-w-[360px] border border-[#3C2A21]/10 shadow-xl overflow-hidden bg-white">
-                        <img src="./images/Cotton.png" alt="원단 초근접 디테일 컷" class="w-full h-full object-cover">
+                    <!-- Right: Image Block -->
+                    <div class="relative p-12 lg:p-20 flex flex-col items-center justify-center bg-[#F2EFE9] min-h-[500px] border-t lg:border-t-0 lg:border-l border-[#3C2A21]/20">
+                        <div class="absolute inset-0 opacity-10 mix-blend-multiply" style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='woven'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.3 0.01' numOctaves='2' result='noise'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.8 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23woven)'/%3E%3C/svg%3E&quot;);"></div>
+                        
+                        <div class="relative z-10 w-full aspect-square max-w-[360px] border border-[#3C2A21]/10 shadow-xl overflow-hidden bg-white">
+                            <img src="./images/Cotton.png" alt="원단 초근접 디테일 컷" class="w-full h-full object-cover">
+                        </div>
+                        <span class="relative z-10 mt-8 typo-item-01 text-gray-500 block uppercase tracking-widest text-center">Fabric Texture Detail</span>
                     </div>
-                    <span class="relative z-10 mt-8 typo-item-01 text-gray-500 block uppercase tracking-widest text-center">Fabric Texture Detail</span>
-                </div>
-            </section>
+                </section>
 
-            <!-- 02. WINDBREAKER 섹션 -->
-            <section id="sec-windbreaker" class="category-section mb-32">
-                <div class="flex items-end gap-4 mb-12 pb-2 border-b border-[#3C2A21]/20">
-                    <h2 class="typo-sec-01 text-[#1A3626]">WINDBREAKER</h2>
-                    <span class="typo-item-01 text-gray-400 mb-2">3 Items</span>
-                </div>
-                
-                <div class="grid grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-16 md:gap-x-10">
-                    <!-- 바람막이 블랙 -->
-                    <a href="#" class="group flex flex-col cursor-pointer">
-                        <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
-                            <img src="./images/WindBlack.png" alt="아카이브 윈드브레이커 블랙" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
-                        </div>
-                        <div class="flex flex-col items-start mt-2">
-                            <p class="typo-item-01 text-gray-500 uppercase mb-1">Windbreaker (Black)</p>
-                            <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">아카이브 윈드브레이커</h3>
-                            <span class="typo-item-02 text-black">129,000 KRW</span>
-                        </div>
-                    </a>
-                    <!-- 바람막이 딥그린 -->
-                    <a href="#" class="group flex flex-col cursor-pointer">
-                        <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
-                            <img src="./images/WindGreen.png" alt="아카이브 윈드브레이커 딥그린" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
-                        </div>
-                        <div class="flex flex-col items-start mt-2">
-                            <p class="typo-item-01 text-gray-500 uppercase mb-1">Windbreaker (Deep Green)</p>
-                            <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">아카이브 윈드브레이커</h3>
-                            <span class="typo-item-02 text-black">129,000 KRW</span>
-                        </div>
-                    </a>
-                    <!-- 바람막이 다크브라운 -->
-                    <a href="#" class="group flex flex-col cursor-pointer">
-                        <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
-                            <img src="./images/WindBrown.png" alt="아카이브 윈드브레이커 다크브라운" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
-                        </div>
-                        <div class="flex flex-col items-start mt-2">
-                            <p class="typo-item-01 text-gray-500 uppercase mb-1">Windbreaker (Dark Brown)</p>
-                            <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">아카이브 윈드브레이커</h3>
-                            <span class="typo-item-02 text-black">129,000 KRW</span>
-                        </div>
-                    </a>
-                </div>
-            </section>
+                <section id="sec-windbreaker" class="category-section mb-32">
+                    <div class="flex items-end gap-4 mb-12 pb-2 border-b border-[#3C2A21]/20">
+                        <!-- italic 제거 -->
+                        <h2 class="typo-sec-01 text-[#1A3626]">WINDBREAKER</h2>
+                        <span class="typo-item-01 text-gray-400 mb-2">3 Items</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-16 md:gap-x-10">
+                        <a href="#" class="group flex flex-col cursor-pointer">
+                            <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
+                                <img src="./images/WindBlack.png" alt="아카이브 윈드브레이커 블랙" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
+                            </div>
+                            <div class="flex flex-col items-start mt-2">
+                                <p class="typo-item-01 text-gray-500 uppercase mb-1">Windbreaker (Black)</p>
+                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">아카이브 윈드브레이커</h3>
+                                <span class="typo-item-02 text-black">129,000 KRW</span>
+                            </div>
+                        </a>
+                        <a href="#" class="group flex flex-col cursor-pointer">
+                            <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
+                                <img src="./images/WindGreen.png" alt="아카이브 윈드브레이커 딥그린" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
+                            </div>
+                            <div class="flex flex-col items-start mt-2">
+                                <p class="typo-item-01 text-gray-500 uppercase mb-1">Windbreaker (Deep Green)</p>
+                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">아카이브 윈드브레이커</h3>
+                                <span class="typo-item-02 text-black">129,000 KRW</span>
+                            </div>
+                        </a>
+                        <a href="#" class="group flex flex-col cursor-pointer">
+                            <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
+                                <img src="./images/WindBrown.png" alt="아카이브 윈드브레이커 다크브라운" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
+                            </div>
+                            <div class="flex flex-col items-start mt-2">
+                                <p class="typo-item-01 text-gray-500 uppercase mb-1">Windbreaker (Dark Brown)</p>
+                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">아카이브 윈드브레이커</h3>
+                                <span class="typo-item-02 text-black">129,000 KRW</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
 
-            <!-- 03. BOTTOM 섹션 -->
-            <section id="sec-bottom" class="category-section mb-32">
-                <div class="flex items-end gap-4 mb-12 pb-2 border-b border-[#3C2A21]/20">
-                    <h2 class="typo-sec-01 text-[#1A3626]">BOTTOM</h2>
-                    <span class="typo-item-01 text-gray-400 mb-2">2 Items</span>
-                </div>
-                
-                <div class="grid grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-16 md:gap-x-10">
-                    <!-- 바지 화이트 -->
-                    <a href="#" class="group flex flex-col cursor-pointer">
-                        <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
-                            <img src="./images/WhitePants.png" alt="투라인 트랙 팬츠 화이트" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
-                        </div>
-                        <div class="flex flex-col items-start mt-2">
-                            <p class="typo-item-01 text-gray-500 uppercase mb-1">Bottom (White)</p>
-                            <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">투라인 트랙 팬츠</h3>
-                            <span class="typo-item-02 text-black">79,000 KRW</span>
-                        </div>
-                    </a>
-                    <!-- 바지 블랙 -->
-                    <a href="#" class="group flex flex-col cursor-pointer">
-                        <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
-                            <img src="./images/BlackPants.png" alt="투라인 트랙 팬츠 블랙" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
-                        </div>
-                        <div class="flex flex-col items-start mt-2">
-                            <p class="typo-item-01 text-gray-500 uppercase mb-1">Bottom (Black)</p>
-                            <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">투라인 트랙 팬츠</h3>
-                            <span class="typo-item-02 text-black">79,000 KRW</span>
-                        </div>
-                    </a>
-                </div>
-            </section>
+                <section id="sec-bottom" class="category-section mb-32">
+                    <div class="flex items-end gap-4 mb-12 pb-2 border-b border-[#3C2A21]/20">
+                        <!-- italic 제거 -->
+                        <h2 class="typo-sec-01 text-[#1A3626]">BOTTOM</h2>
+                        <span class="typo-item-01 text-gray-400 mb-2">2 Items</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-16 md:gap-x-10">
+                        <a href="#" class="group flex flex-col cursor-pointer">
+                            <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
+                                <img src="./images/WhitePants.png" alt="투라인 트랙 팬츠 화이트" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
+                            </div>
+                            <div class="flex flex-col items-start mt-2">
+                                <p class="typo-item-01 text-gray-500 uppercase mb-1">Bottom (White)</p>
+                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">투라인 트랙 팬츠</h3>
+                                <span class="typo-item-02 text-black">79,000 KRW</span>
+                            </div>
+                        </a>
+                        <a href="#" class="group flex flex-col cursor-pointer">
+                            <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
+                                <img src="./images/BlackPants.png" alt="투라인 트랙 팬츠 블랙" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
+                            </div>
+                            <div class="flex flex-col items-start mt-2">
+                                <p class="typo-item-01 text-gray-500 uppercase mb-1">Bottom (Black)</p>
+                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">투라인 트랙 팬츠</h3>
+                                <span class="typo-item-02 text-black">79,000 KRW</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
 
-            <!-- 04. VARSITY JACKET 섹션 -->
-            <section id="sec-varsity" class="category-section mb-32">
-                <div class="flex items-end gap-4 mb-12 pb-2 border-b border-[#3C2A21]/20">
-                    <h2 class="typo-sec-01 text-[#1A3626]">VARSITY JACKET</h2>
-                    <span class="typo-item-01 text-gray-400 mb-2">1 Item</span>
-                </div>
-                
-                <div class="grid grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-16 md:gap-x-10">
-                    <!-- 야구점퍼 딥그린 -->
-                    <a href="#" class="group flex flex-col cursor-pointer">
-                        <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
-                            <img src="./images/Jumper.png" alt="아이코닉 바시티 재킷" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
-                        </div>
-                        <div class="flex flex-col items-start mt-2">
-                            <p class="typo-item-01 text-gray-500 uppercase mb-1">Varsity Jacket (Deep Green)</p>
-                            <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">아이코닉 바시티 재킷</h3>
-                            <span class="typo-item-02 text-black">159,000 KRW</span>
-                        </div>
-                    </a>
-                </div>
-            </section>
+                <section id="sec-varsity" class="category-section mb-32">
+                    <div class="flex items-end gap-4 mb-12 pb-2 border-b border-[#3C2A21]/20">
+                        <!-- italic 제거 -->
+                        <h2 class="typo-sec-01 text-[#1A3626]">VARSITY JACKET</h2>
+                        <span class="typo-item-01 text-gray-400 mb-2">1 Item</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-16 md:gap-x-10">
+                        <a href="#" class="group flex flex-col cursor-pointer">
+                            <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
+                                <img src="./images/Jumper.png" alt="아이코닉 바시티 재킷" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
+                            </div>
+                            <div class="flex flex-col items-start mt-2">
+                                <p class="typo-item-01 text-gray-500 uppercase mb-1">Varsity Jacket (Deep Green)</p>
+                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">아이코닉 바시티 재킷</h3>
+                                <span class="typo-item-02 text-black">159,000 KRW</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
 
-            <!-- 05. HOODIE 섹션 -->
-            <section id="sec-hoodie" class="category-section mb-10">
-                <div class="flex items-end gap-4 mb-12 pb-2 border-b border-[#3C2A21]/20">
-                    <h2 class="typo-sec-01 text-[#1A3626]">HOODIE</h2>
-                    <span class="typo-item-01 text-gray-400 mb-2">2 Items</span>
-                </div>
-                
-                <div class="grid grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-16 md:gap-x-10">
-                    <!-- 후드 딥그린 -->
-                    <a href="#" class="group flex flex-col cursor-pointer">
-                        <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
-                            <img src="./images/GreenHoodie.png" alt="에센셜 아치 로고 후디 딥그린" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
-                        </div>
-                        <div class="flex flex-col items-start mt-2">
-                            <p class="typo-item-01 text-gray-500 uppercase mb-1">Hoodie (Deep Green)</p>
-                            <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">에센셜 아치 로고 후디</h3>
-                            <span class="typo-item-02 text-black">79,000 KRW</span>
-                        </div>
-                    </a>
-                    <!-- 후드 다크브라운 -->
-                    <a href="#" class="group flex flex-col cursor-pointer">
-                        <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
-                            <img src="./images/BrownHoodie.png" alt="에센셜 아치 로고 후디 다크브라운" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
-                        </div>
-                        <div class="flex flex-col items-start mt-2">
-                            <p class="typo-item-01 text-gray-500 uppercase mb-1">Hoodie (Dark Brown)</p>
-                            <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">에센셜 아치 로고 후디</h3>
-                            <span class="typo-item-02 text-black">79,000 KRW</span>
-                        </div>
-                    </a>
-                </div>
-            </section>
+                <section id="sec-hoodie" class="category-section mb-10">
+                    <div class="flex items-end gap-4 mb-12 pb-2 border-b border-[#3C2A21]/20">
+                        <!-- italic 제거 -->
+                        <h2 class="typo-sec-01 text-[#1A3626]">HOODIE</h2>
+                        <span class="typo-item-01 text-gray-400 mb-2">2 Items</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-16 md:gap-x-10">
+                        <a href="#" class="group flex flex-col cursor-pointer">
+                            <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
+                                <img src="./images/GreenHoodie.png" alt="에센셜 아치 로고 후디 딥그린" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
+                            </div>
+                            <div class="flex flex-col items-start mt-2">
+                                <p class="typo-item-01 text-gray-500 uppercase mb-1">Hoodie (Deep Green)</p>
+                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">에센셜 아치 로고 후디</h3>
+                                <span class="typo-item-02 text-black">79,000 KRW</span>
+                            </div>
+                        </a>
+                        <a href="#" class="group flex flex-col cursor-pointer">
+                            <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
+                                <img src="./images/BrownHoodie.png" alt="에센셜 아치 로고 후디 다크브라운" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
+                            </div>
+                            <div class="flex flex-col items-start mt-2">
+                                <p class="typo-item-01 text-gray-500 uppercase mb-1">Hoodie (Dark Brown)</p>
+                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">에센셜 아치 로고 후디</h3>
+                                <span class="typo-item-02 text-black">79,000 KRW</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
 
             </div> <!-- 우측 상품 영역 래퍼 끝 -->
         </div> <!-- 메인 콘텐츠 영역 래퍼 끝 -->
     </main>
 
-    <!-- 확장된 브랜드 푸터 (디자인 시안 반영) -->
     <footer class="bg-[#111] text-[#F2EFE9] pt-20 pb-10 mt-20">
         <div class="max-w-[1920px] mx-auto px-8 xl:px-16">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
@@ -414,23 +409,19 @@
                 </div>
                 
                 <div class="flex items-center space-x-8">
-                    <!-- Social Icons -->
+                    <!-- Social Icons (SVG 적용 완료) -->
                     <div class="flex space-x-5 text-gray-400">
-                        <!-- Instagram -->
                         <a href="#" class="hover:text-white transition-colors" title="Instagram">
                             <svg class="w-[18px] h-[18px]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="18" height="18" x="3" y="3" rx="4"></rect><circle cx="12" cy="12" r="4"></circle><path d="M16.5 7.5v.01"></path></svg>
                         </a>
-                        <!-- Twitter -->
                         <a href="#" class="hover:text-white transition-colors" title="Twitter">
                             <svg class="w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
                         </a>
-                        <!-- YouTube -->
                         <a href="#" class="hover:text-white transition-colors" title="YouTube">
                             <svg class="w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
                         </a>
                     </div>
                     
-                    <!-- Policy Links -->
                     <div class="flex space-x-5 font-light">
                         <a href="#" class="hover:text-white transition-colors">이용약관</a>
                         <a href="#" class="hover:text-white transition-colors">개인정보처리방침</a>
@@ -440,7 +431,6 @@
         </div>
     </footer>
 
-    <!-- Scroll to Top 버튼 (가시성을 높인 중앙 하단 매거진 스타일, 정렬 수정) -->
     <!-- fixed 에서 sticky 컨테이너 내부 절대 배치 방식으로 변경하여 카테고리 좌측 라인과 완벽히 정렬 -->
     <div id="scrollToTopContainer" class="fixed bottom-0 left-0 w-full pointer-events-none z-50 transition-transform duration-0">
         <div class="max-w-[1920px] mx-auto w-full px-8 xl:px-16 relative">
