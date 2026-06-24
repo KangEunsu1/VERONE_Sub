@@ -1,476 +1,413 @@
 <!DOCTYPE html>
-<html lang="ko" class="scroll-smooth">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARCHIVE ROOM : ALL PRODUCTS | VERONE</title>
+    <title>SHOP - VERONE Archive</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 구글 폰트: Inika (타이틀용) / Inter (본문용) 연동 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- FontAwesome 아이콘 로드 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* 새로운 INIKA / INTER 스타일 가이드 반영 */
-        :root {
-            --fw-300: 300;
-            --fw-600: 600;
-        }
-
+        /* 글로벌 폰트 적용 */
         body {
-            /* INTER BODY 기반 설정 */
             font-family: 'Inter', sans-serif;
-            font-weight: var(--fw-300);
-            line-height: 1.2;
-            letter-spacing: 0;
-            color: #111827;
-            background-color: #F2EFE9;
+            background-color: #F2EFE9; /* 크림/오프화이트 배경 */
+            color: #111827; /* 차콜 블랙 */
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Typography Classes (INIKA / INTER 매핑) */
-        .typo-brand  { font-family: 'Inika', serif; font-weight: var(--fw-600); font-size: 128px; line-height: 1;   letter-spacing: 0.06em; } 
-        .typo-hero-01{ font-family: 'Inika', serif; font-weight: var(--fw-600); font-size: 80px;  line-height: 1.1; letter-spacing: -0.02em; }
-        .typo-page-01{ font-family: 'Inika', serif; font-weight: var(--fw-600); font-size: 64px;  line-height: 1.1; letter-spacing: 0; }
-        .typo-sec-01 { font-family: 'Inika', serif; font-weight: var(--fw-600); font-size: 48px;  line-height: 1.2; letter-spacing: 0; }
-        .typo-sec-02 { font-family: 'Inika', serif; font-weight: var(--fw-600); font-size: 40px;  line-height: 1.2; letter-spacing: 0; }
-        .typo-sec-03 { font-family: 'Inika', serif; font-weight: var(--fw-600); font-size: 32px;  line-height: 1.2; letter-spacing: 0; }
-        .typo-sec-04 { font-family: 'Inika', serif; font-weight: var(--fw-300); font-size: 24px;  line-height: 1.2; letter-spacing: 0; }
-        
-        /* 기존 항목 (새 가이드 외 보조 텍스트 - INTER 적용) */
-        .typo-body-01{ font-family: 'Inter', sans-serif; font-weight: var(--fw-300); font-size: 18px; line-height: 1.2;  letter-spacing: 0; }
-        .typo-br-01  { font-family: 'Inter', sans-serif; font-weight: var(--fw-300); font-size: 24px; line-height: 1.33; letter-spacing: 0.1em; }
-        .typo-item-01{ font-family: 'Inter', sans-serif; font-weight: var(--fw-600); font-size: 12px; line-height: 1.33; letter-spacing: 0; }
-        .typo-item-02{ font-family: 'Inter', sans-serif; font-weight: var(--fw-600); font-size: 16px; line-height: 1.5;  letter-spacing: 0; }
-        .typo-sale-01{ font-family: 'Inter', sans-serif; font-weight: var(--fw-600); font-size: 18px; line-height: 1.56; letter-spacing: 0; }
-        .typo-sec-05 { font-family: 'Inter', sans-serif; font-weight: var(--fw-600); font-size: 14px; line-height: 1.43; letter-spacing: 0.3em; color: #D4AF37; }
-        .typo-menu-01{ font-family: 'Inter', sans-serif; font-weight: var(--fw-600); font-size: 16px; line-height: 1.2;  letter-spacing: 0.01em; }
-        .typo-menu-02{ font-family: 'Inter', sans-serif; font-weight: var(--fw-600); font-size: 14px; line-height: 1.2;  letter-spacing: 0.01em; }
+        /* 
+         * VERONE STYLE GUIDE (INIKA / INTER) 동기화 
+         */
+        /* [INIKA] */
+        .typo-brand { font-family: 'Inika', serif; font-weight: 700; font-size: 128px; line-height: 1; letter-spacing: 0.06em; }
+        .typo-hero-01 { font-family: 'Inika', serif; font-weight: 700; font-size: 80px; line-height: 1.1; letter-spacing: -0.02em; }
+        .typo-page-01 { font-family: 'Inika', serif; font-weight: 700; font-size: 64px; line-height: 1.1; letter-spacing: 0; }
+        .typo-sec-01 { font-family: 'Inika', serif; font-weight: 700; font-size: 48px; line-height: 1.2; letter-spacing: 0; }
+        .typo-sec-02 { font-family: 'Inika', serif; font-weight: 700; font-size: 40px; line-height: 1.2; letter-spacing: 0; }
+        .typo-sec-03 { font-family: 'Inika', serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: 0.02em; }
+        .typo-sec-04 { font-family: 'Inika', serif; font-weight: 400; font-size: 24px; line-height: 1.2; letter-spacing: 0.02em; }
 
-        @media (max-width: 768px) {
-            .typo-brand { font-size: 64px; }
-            .typo-sec-01 { font-size: 36px; }
-            .typo-sec-02 { font-size: 28px; }
+        /* [INTER] */
+        .typo-body-01 { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; letter-spacing: 0; }
+        .typo-body-02 { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 14px; line-height: 1.6; letter-spacing: 0; }
+        .typo-item-01 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 12px; line-height: 1.4; letter-spacing: 0.02em; }
+        .typo-item-02 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 16px; line-height: 1.4; letter-spacing: 0; }
+        .typo-sale-01 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 18px; line-height: 1.4; letter-spacing: 0; }
+        .typo-menu-01 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; line-height: 1.4; letter-spacing: 0.02em; }
+        .typo-menu-02 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 12px; line-height: 1.4; letter-spacing: 0.02em; }
+        .typo-ft-title { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 12px; line-height: 1.4; letter-spacing: 0.08em; }
+        .typo-ft-link { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 12px; line-height: 1.8; letter-spacing: 0; }
+        .typo-ft-copy { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 10px; line-height: 1; letter-spacing: 0; }
+        .typo-label-01 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 12px; line-height: 1.4; letter-spacing: 0.08em; }
+        .typo-button-01 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; line-height: 1.4; letter-spacing: 0.08em; }
+
+        /* 레이아웃 기준 (1440px / 12 Cols / Margin 40px / Gutter 24px) */
+        .layout-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding-left: 40px;
+            padding-right: 40px;
         }
 
-        /* 웹 전체 종이(노이즈) 질감 오버레이 */
+        /* 
+         * 커스텀 스크롤/앵커 속성 (사이드바 메뉴 클릭 시 상단 여백) 
+         */
+        html {
+            scroll-behavior: smooth;
+        }
+        .category-anchor {
+            scroll-margin-top: 100px;
+        }
+
+        /* 질감(노이즈) 효과 - 과하지 않게 */
         body::after {
             content: '';
             position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-            opacity: 0.12; filter: grayscale(100%) contrast(150%); z-index: 9999; mix-blend-mode: multiply;
+            opacity: 0.04;
+            z-index: 9999;
         }
-
-        /* 카테고리 앵커 스크롤 여백 */
-        .category-section { scroll-margin-top: 180px; }
-
-        /* 스크롤바 숨김 (가로 스크롤 메뉴용) */
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body class="antialiased">
+<body class="bg-[#F2EFE9] antialiased">
 
-    <header class="border-b border-[#3C2A21]/20 sticky top-0 w-full bg-[#F2EFE9]/90 backdrop-blur-md z-50 transition-all duration-300">
-        <nav class="grid grid-cols-3 items-center px-8 xl:px-16 py-4 max-w-[1920px] mx-auto">
-            <div class="justify-self-start">
-                <a href="#" class="w-32 h-10 flex items-center justify-center font-black tracking-widest text-black bg-white border-2 border-black shrink-0 hover:bg-black hover:text-white transition-colors">
-                    VERONE
-                </a>
-            </div>
+    <!-- Header -->
+    <header class="w-full bg-[#F2EFE9] border-b border-[#3C2A21]/20 sticky top-0 z-50">
+        <div class="layout-container h-[80px] grid grid-cols-12 gap-[24px] items-center">
             
-            <div class="hidden lg:flex justify-self-center whitespace-nowrap">
-                <ul class="flex gap-8 typo-menu-01 uppercase items-center text-[#1A3626]">
-                    <li><a href="#" class="border-b-2 border-[#1A3626] pb-1">SHOP ALL</a></li>
-                    <li><a href="#" class="hover:border-b-2 hover:border-[#1A3626] pb-1">UNIFORM</a></li>
-                    <li><a href="#" class="hover:border-b-2 hover:border-[#1A3626] pb-1">ARCHIVE</a></li>
+            <!-- Left: Logo -->
+            <div class="col-span-3">
+                <a href="index.html" class="typo-sec-03 text-[#111827]">VERONE</a>
+            </div>
+
+            <!-- Center: Navigation (SHOP Active) -->
+            <nav class="col-span-6 flex justify-center">
+                <ul class="flex gap-8 typo-menu-01 text-[#111827] uppercase">
+                    <li><a href="#" class="pb-1 border-b border-transparent hover:border-[#1A3626] transition-colors block">BEST</a></li>
+                    <!-- 활성화된 SHOP 메뉴 -->
+                    <li><a href="#" class="pb-1 border-b border-[#1A3626] text-[#1A3626] font-bold block">SHOP</a></li>
+                    <li><a href="#" class="pb-1 border-b border-transparent hover:border-[#1A3626] transition-colors block">BRAND</a></li>
+                    <li><a href="#" class="pb-1 border-b border-transparent hover:border-[#1A3626] transition-colors block">ARCHIVE</a></li>
+                    <li><a href="#" class="pb-1 border-b border-transparent hover:border-[#1A3626] transition-colors block">LOOKBOOK</a></li>
                 </ul>
+            </nav>
+
+            <!-- Right: User Actions -->
+            <div class="col-span-3 flex justify-end gap-6 typo-menu-01 text-[#111827] uppercase">
+                <a href="#" class="hover:text-[#1A3626] transition-colors block">MY</a>
+                <a href="#" class="hover:text-[#1A3626] transition-colors block">SEARCH</a>
+                <a href="#" class="hover:text-[#1A3626] transition-colors block">BAG</a>
             </div>
-            
-            <!-- 우측 상단 유저 액션: 마이페이지, 좋아요, 장바구니 (FontAwesome 아이콘 적용) -->
-            <div class="justify-self-end flex space-x-4">
-                <div class="w-8 h-8 flex items-center justify-center text-[14px] border border-gray-400 bg-white hover:bg-black hover:text-white cursor-pointer transition-colors" title="마이페이지">
-                    <i class="fa-regular fa-user"></i>
-                </div>
-                <div class="w-8 h-8 flex items-center justify-center text-[14px] border border-gray-400 bg-white hover:bg-black hover:text-white cursor-pointer transition-colors" title="위시리스트">
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="w-8 h-8 flex items-center justify-center text-[14px] border border-gray-400 bg-white hover:bg-black hover:text-white cursor-pointer transition-colors" title="장바구니">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </div>
-            </div>
-        </nav>
+        </div>
     </header>
 
-    <div class="lg:hidden w-full border-b border-[#3C2A21]/20 sticky top-[73px] bg-[#F2EFE9]/95 backdrop-blur-md z-40">
-        <div class="max-w-[1920px] mx-auto px-8 py-4 flex justify-between items-center gap-4">
-            <ul class="flex overflow-x-auto no-scrollbar gap-6 typo-menu-02 text-gray-500 uppercase whitespace-nowrap w-full">
-                <li><a href="#sec-uniform" class="hover:text-black text-black">01. Uniform</a></li>
-                <li><a href="#sec-windbreaker" class="hover:text-black">02. Windbreaker</a></li>
-                <li><a href="#sec-bottom" class="hover:text-black">03. Bottom</a></li>
-                <li><a href="#sec-varsity" class="hover:text-black">04. Varsity</a></li>
-                <li><a href="#sec-hoodie" class="hover:text-black">05. Hoodie</a></li>
-            </ul>
-        </div>
-    </div>
-
     <main>
-        <!-- 풀와이드 백그라운드 배너 -->
-        <section class="relative w-full h-[300px] lg:h-[400px] flex flex-col items-center justify-center overflow-hidden bg-[#1A3626] border-b-[8px] border-[#3C2A21]">
-            <img src="./images/Sub.png" alt="Archive Room Locker Background" class="absolute inset-0 w-full h-full object-cover z-0 object-center">
-            <div class="absolute inset-0 bg-black/40 z-0 pointer-events-none"></div>
+        <!-- Hero Section -->
+        <!-- 높이 560px, 중앙 정렬, 차분한 분위기 -->
+        <section class="h-[560px] bg-[#1A3626] w-full flex items-center justify-center relative overflow-hidden">
+            <!-- 미세한 질감 오버레이 -->
+            <div class="absolute inset-0 opacity-20 mix-blend-overlay" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E');"></div>
             
-            <div class="relative z-10 text-center flex flex-col items-center mt-8">
-                <span class="typo-sec-05 mb-4 uppercase">Archive Room</span>
-                <!-- italic 제거 -->
-                <h1 class="typo-brand text-[#F2EFE9] drop-shadow-xl uppercase">All Products</h1>
+            <div class="relative z-10 text-center flex flex-col items-center">
+                <span class="typo-label-01 text-[#D4AF37] mb-6 tracking-widest uppercase">Archive Room</span>
+                <h1 class="typo-page-01 text-[#F2EFE9] mb-6">ALL PRODUCTS</h1>
+                <p class="typo-body-01 text-[#F2EFE9]/80 max-w-lg mx-auto mt-2 font-light">
+                    Retro sportswear essentials from VERONE’s archive.
+                </p>
             </div>
         </section>
 
-        <div class="max-w-[1920px] mx-auto w-full px-8 xl:px-16 py-20 flex flex-col lg:flex-row gap-12 lg:gap-20 relative">
+        <!-- Main Content Area: Sidebar & Products Grid -->
+        <div class="layout-container pt-16 pb-24 relative grid grid-cols-12 gap-[24px] items-start">
             
-            <!-- 좌측 사이드바 (데스크탑 전용) -->
-            <aside class="hidden lg:block w-64 shrink-0 sticky top-[100px] h-fit z-30">
+            <!-- Left Sidebar: Archive Index & Color Palette & Back to Top (Col 1~3, Sticky) -->
+            <!-- 높이를 꽉 차게(h-[calc(100vh-120px)]) 만들고, flex-col을 줘서 버튼을 맨 아래로(mt-auto) 밀어냅니다. -->
+            <aside class="col-span-12 lg:col-span-3 sticky top-[120px] h-[calc(100vh-120px)] pb-10 z-30 flex flex-col hidden lg:flex">
+                <!-- Archive Index -->
                 <div class="mb-12">
-                    <h3 class="typo-sec-03 uppercase mb-6 border-b-2 border-black pb-2 text-[#1A3626]">Archive Index</h3>
-                    <ul class="space-y-4 typo-menu-01 text-gray-500 uppercase">
-                        <li><a href="#sec-uniform" class="hover:text-black text-black transition-colors flex justify-between"><span>01. Uniform</span> <span class="text-xs font-bold text-gray-400">3</span></a></li>
-                        <li><a href="#sec-windbreaker" class="hover:text-black transition-colors flex justify-between"><span>02. Windbreaker</span> <span class="text-xs font-bold text-gray-400">3</span></a></li>
-                        <li><a href="#sec-bottom" class="hover:text-black transition-colors flex justify-between"><span>03. Bottom</span> <span class="text-xs font-bold text-gray-400">2</span></a></li>
-                        <li><a href="#sec-varsity" class="hover:text-black transition-colors flex justify-between"><span>04. Varsity</span> <span class="text-xs font-bold text-gray-400">1</span></a></li>
-                        <li><a href="#sec-hoodie" class="hover:text-black transition-colors flex justify-between"><span>05. Hoodie</span> <span class="text-xs font-bold text-gray-400">2</span></a></li>
+                    <h3 class="typo-menu-01 text-[#111827] mb-6 opacity-50 border-b border-[#3C2A21]/20 pb-4 tracking-widest uppercase">ARCHIVE INDEX</h3>
+                    <ul class="flex flex-col gap-4">
+                        <li><a href="#uniform" class="typo-menu-02 text-[#111827] hover:text-[#1A3626] transition-colors hover:underline underline-offset-4 block py-1">01. Uniform</a></li>
+                        <li><a href="#windbreaker" class="typo-menu-02 text-[#111827] hover:text-[#1A3626] transition-colors hover:underline underline-offset-4 block py-1">02. Windbreaker</a></li>
+                        <li><a href="#bottom" class="typo-menu-02 text-[#111827] hover:text-[#1A3626] transition-colors hover:underline underline-offset-4 block py-1">03. Bottom</a></li>
+                        <li><a href="#varsity" class="typo-menu-02 text-[#111827] hover:text-[#1A3626] transition-colors hover:underline underline-offset-4 block py-1">04. Varsity Jacket</a></li>
+                        <li><a href="#hoodie" class="typo-menu-02 text-[#111827] hover:text-[#1A3626] transition-colors hover:underline underline-offset-4 block py-1">05. Hoodie</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h3 class="typo-sec-03 uppercase mb-6 border-b border-gray-300 pb-2 text-black">Color Filter</h3>
-                    <!-- 기능 없이 단순 보여주기 용도로 전환 (cursor-default 적용) -->
-                    <div class="grid grid-cols-5 gap-3">
-                        <div class="w-8 h-8 bg-[#1A3626] border border-black shadow-sm cursor-default" title="Deep Green"></div>
-                        <div class="w-8 h-8 bg-[#F2EFE9] border border-gray-400 shadow-sm cursor-default" title="Cream"></div>
-                        <div class="w-8 h-8 bg-[#3C2A21] border border-gray-400 shadow-sm cursor-default" title="Dark Brown"></div>
-                        <div class="w-8 h-8 bg-black border border-gray-400 shadow-sm cursor-default" title="Black"></div>
-                        <div class="w-8 h-8 bg-white border border-gray-400 shadow-sm cursor-default" title="White"></div>
-                    </div>
-                </div>
+
+                <!-- Back to Top Button (사이드바 최하단 배치, mt-auto 사용) -->
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="mt-auto w-max px-6 py-3 bg-[#1A3626] text-[#F2EFE9] hover:bg-[#111827] transition-all duration-300 flex items-center justify-center typo-button-01 shadow-lg cursor-pointer">
+                    ↑ BACK TO TOP
+                </button>
             </aside>
 
-            <!-- 우측 상품 영역 래퍼 -->
-            <div class="flex-1 w-full">
-            
-                <section id="sec-uniform" class="category-section mb-32">
-                    <div class="flex items-end gap-4 mb-12 pb-2 border-b border-[#3C2A21]/20">
-                        <!-- italic 제거 -->
-                        <h2 class="typo-sec-01 text-[#1A3626]">UNIFORM</h2>
-                        <span class="typo-item-01 text-gray-400 mb-2">3 Items</span>
+            <!-- Right Content: Products & Banner (Col 4~12) -->
+            <!-- 주의: 상위 부모가 12그리드이고 여기가 9칸 차지하므로, 내부 상품은 3열로 구성하려면 grid-cols-3을 사용. -->
+            <div class="col-span-12 lg:col-span-9 pl-0 lg:pl-4">
+                
+                <!-- UNIFORM -->
+                <section id="uniform" class="category-anchor mb-24">
+                    <div class="flex items-baseline justify-between border-b border-[#3C2A21]/20 pb-4 mb-8">
+                        <h2 class="typo-sec-02 text-[#1A3626]">UNIFORM</h2>
+                        <span class="typo-item-01 text-[#3C2A21]/60">3 Items</span>
                     </div>
-
-                    <div class="grid grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-16 md:gap-x-10">
-                        <!-- 홈 유니폼 (Deep Green) - 배경 화이트 및 보더 규칙 통일 -->
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Item 1 -->
                         <a href="product_detail_home_uniform.html" class="group flex flex-col cursor-pointer">
-                            <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
-                                <img src="./images/Home.png" alt="베론 딥그린 홈 유니폼" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
-                                <div class="absolute top-3 left-3 bg-[#D4AF37] text-black text-[10px] px-2 py-1 font-bold tracking-widest">BEST</div>
+                            <div class="w-full aspect-[4/5] bg-white overflow-hidden mb-4 relative border border-[#3C2A21]/10 shadow-sm flex items-center justify-center">
+                                <img src="./images/Home.png" alt="Classic Retro Jersey Home" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105" onerror="this.src='https://placehold.co/400x500/FFFFFF/1A3626?text=Uniform+Home'">
                             </div>
-                            <div class="flex flex-col items-start mt-2">
-                                <p class="typo-item-01 text-gray-500 uppercase mb-1">UNIFORM (HOME)</p>
-                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">베론 딥그린 홈 유니폼</h3>
-                                <span class="typo-item-02 text-black">89,000 KRW</span>
-                            </div>
+                            <p class="typo-label-01 text-[#3C2A21]/60 mb-1 uppercase tracking-widest">UNIFORM</p>
+                            <h3 class="typo-item-01 text-[#111827] mb-1 group-hover:text-[#1A3626] transition-colors">Classic Retro Jersey Home</h3>
+                            <p class="typo-item-02 text-[#111827]">89,000 KRW</p>
                         </a>
-
-                        <!-- 어웨이 유니폼 (Cream) -->
+                        <!-- Item 2 -->
                         <a href="#" class="group flex flex-col cursor-pointer">
-                            <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
-                                <img src="./images/Away.png" alt="오리지널 어웨이 유니폼" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
+                            <div class="w-full aspect-[4/5] bg-white overflow-hidden mb-4 relative border border-[#3C2A21]/10 shadow-sm flex items-center justify-center">
+                                <img src="./images/Away.png" alt="Classic Retro Jersey Away" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105" onerror="this.src='https://placehold.co/400x500/FFFFFF/1A3626?text=Uniform+Away'">
                             </div>
-                            <div class="flex flex-col items-start mt-2">
-                                <p class="typo-item-01 text-gray-500 uppercase mb-1">UNIFORM (AWAY)</p>
-                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">오리지널 어웨이 유니폼</h3>
-                                <span class="typo-item-02 text-black">89,000 KRW</span>
-                            </div>
+                            <p class="typo-label-01 text-[#3C2A21]/60 mb-1 uppercase tracking-widest">UNIFORM</p>
+                            <h3 class="typo-item-01 text-[#111827] mb-1 group-hover:text-[#1A3626] transition-colors">Classic Retro Jersey Away</h3>
+                            <p class="typo-item-02 text-[#111827]">89,000 KRW</p>
                         </a>
-
-                        <!-- 써드 유니폼 (Dark Brown) -->
+                        <!-- Item 3 -->
                         <a href="#" class="group flex flex-col cursor-pointer">
-                            <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
-                                <img src="./images/Third.png" alt="써드 얼터너티브 유니폼" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
+                            <div class="w-full aspect-[4/5] bg-white overflow-hidden mb-4 relative border border-[#3C2A21]/10 shadow-sm flex items-center justify-center">
+                                <img src="./images/Third.png" alt="Classic Retro Jersey Third" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105" onerror="this.src='https://placehold.co/400x500/FFFFFF/1A3626?text=Uniform+Third'">
                             </div>
-                            <div class="flex flex-col items-start mt-2">
-                                <p class="typo-item-01 text-gray-500 uppercase mb-1">UNIFORM (THIRD)</p>
-                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">써드 얼터너티브 유니폼</h3>
-                                <span class="typo-item-02 text-black">99,000 KRW</span>
-                            </div>
+                            <p class="typo-label-01 text-[#3C2A21]/60 mb-1 uppercase tracking-widest">UNIFORM</p>
+                            <h3 class="typo-item-01 text-[#111827] mb-1 group-hover:text-[#1A3626] transition-colors">Classic Retro Jersey Third</h3>
+                            <p class="typo-item-02 text-[#111827]">99,000 KRW</p>
                         </a>
                     </div>
                 </section>
 
-                <section class="grid grid-cols-1 lg:grid-cols-2 mb-32 border-y border-[#3C2A21]/20">
-                    <!-- Left: Text Block (Deep Green) -->
-                    <div class="relative p-12 lg:p-20 flex flex-col justify-center bg-[#1A3626] text-[#F2EFE9] min-h-[500px]">
-                        <div class="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none" style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E&quot;);"></div>
-                        <div class="relative z-10">
-                            <span class="typo-sec-05 mb-6 block uppercase">Heritage & Craft</span>
-                            <h2 class="typo-sec-01 mb-8 leading-tight text-[#F2EFE9]">BUILT ON<br>TIMELESS<br>MATERIALS</h2>
-                            <div class="typo-body-01 text-gray-300 max-w-2xl break-keep space-y-4">
-                                <p>오랜 시간이 지나도 변치 않는 가치는 디테일에서 시작됩니다.</p>
-                                <p>베론의 아카이브 컬렉션은 90년대 오리지널 유니폼의 밀도 높은 직조 방식과 바스락거리는 나일론의 질감을 완벽히 복각했습니다.</p>
-                                <p>피부에 닿는 촉각적 향수까지 재현합니다.</p>
-                            </div>
+                <!-- Banner Section (Inner) -->
+                <!-- 좌우 6:6(md) 분할 -->
+                <section class="h-auto md:h-[600px] w-full my-24 bg-[#1A3626] flex flex-col md:flex-row relative shadow-lg overflow-hidden">
+                    <!-- Left: Text -->
+                    <div class="w-full md:w-1/2 flex flex-col justify-center px-8 py-16 md:px-12 md:py-0">
+                        <span class="typo-label-01 text-[#D4AF37] mb-6 uppercase tracking-widest">Heritage & Craft</span>
+                        <h2 class="typo-sec-02 text-[#F2EFE9] mb-8 leading-snug">BUILT ON<br>TIMELESS<br>MATERIALS</h2>
+                        <div class="space-y-6 mb-12">
+                            <p class="typo-body-01 text-[#F2EFE9]/80 break-keep">
+                                오랜 시간이 지나도 변치 않는 가치는 디테일에서 시작됩니다.
+                            </p>
+                            <p class="typo-body-01 text-[#F2EFE9]/80 break-keep">
+                                VERONE의 아카이브 컬렉션은 90년대 오리지널 유니폼의 밀도 높은 직조 방식과 바스락거리는 나일론의 질감을 현대적으로 복각합니다.<br>
+                                피부에 닿는 촉각적 향수까지 재현합니다.
+                            </p>
+                        </div>
+                        <div>
+                            <a href="#" class="inline-block border border-[#F2EFE9] text-[#F2EFE9] px-8 py-4 typo-button-01 hover:bg-[#F2EFE9] hover:text-[#1A3626] transition-colors uppercase">
+                                EXPLORE ARCHIVE
+                            </a>
                         </div>
                     </div>
                     
-                    <!-- Right: Image Block -->
-                    <div class="relative p-12 lg:p-20 flex flex-col items-center justify-center bg-[#F2EFE9] min-h-[500px] border-t lg:border-t-0 lg:border-l border-[#3C2A21]/20">
-                        <div class="absolute inset-0 opacity-10 mix-blend-multiply" style="background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='woven'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.3 0.01' numOctaves='2' result='noise'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.8 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23woven)'/%3E%3C/svg%3E&quot;);"></div>
-                        
-                        <div class="relative z-10 w-full aspect-square max-w-[360px] border border-[#3C2A21]/10 shadow-xl overflow-hidden bg-white">
-                            <img src="./images/Cotton.png" alt="원단 초근접 디테일 컷" class="w-full h-full object-cover">
+                    <!-- Right: Image -->
+                    <div class="w-full md:w-1/2 h-64 md:h-full relative">
+                        <div class="absolute inset-0 border-l border-[#3C2A21]/30 hidden md:block z-20"></div>
+                        <div class="w-full h-full bg-[#111827] relative overflow-hidden flex items-center justify-center">
+                             <!-- 직물 텍스처 노이즈 오버레이 -->
+                             <div class="absolute inset-0 opacity-40 mix-blend-overlay z-10" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 400 400%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22woven%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.4 0.02%22 numOctaves=%222%22 result=%22noise%22/%3E%3CfeColorMatrix type=%22matrix%22 values=%221 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.8 0%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23woven)%22/%3E%3C/svg%3E');"></div>
+                             <img src="./images/Cotton.png" alt="Fabric Detail" class="w-3/4 h-3/4 object-cover border border-[#3C2A21]/20 shadow-2xl relative z-20" onerror="this.src='https://placehold.co/400x500/1A3626/FFFFFF?text=Fabric+Texture'">
                         </div>
-                        <span class="relative z-10 mt-8 typo-item-01 text-gray-500 block uppercase tracking-widest text-center">Fabric Texture Detail</span>
                     </div>
                 </section>
 
-                <section id="sec-windbreaker" class="category-section mb-32">
-                    <div class="flex items-end gap-4 mb-12 pb-2 border-b border-[#3C2A21]/20">
-                        <!-- italic 제거 -->
-                        <h2 class="typo-sec-01 text-[#1A3626]">WINDBREAKER</h2>
-                        <span class="typo-item-01 text-gray-400 mb-2">3 Items</span>
+                <!-- WINDBREAKER -->
+                <section id="windbreaker" class="category-anchor mb-24">
+                    <div class="flex items-baseline justify-between border-b border-[#3C2A21]/20 pb-4 mb-8">
+                        <h2 class="typo-sec-02 text-[#1A3626]">WINDBREAKER</h2>
+                        <span class="typo-item-01 text-[#3C2A21]/60">3 Items</span>
                     </div>
                     
-                    <div class="grid grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-16 md:gap-x-10">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <a href="#" class="group flex flex-col cursor-pointer">
-                            <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
-                                <img src="./images/WindBlack.png" alt="아카이브 윈드브레이커 블랙" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
+                            <div class="w-full aspect-[4/5] bg-white overflow-hidden mb-4 relative border border-[#3C2A21]/10 shadow-sm flex items-center justify-center">
+                                <img src="./images/WindBlack.png" alt="Windbreaker Black" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105" onerror="this.src='https://placehold.co/400x500/FFFFFF/1A3626?text=Windbreaker'">
                             </div>
-                            <div class="flex flex-col items-start mt-2">
-                                <p class="typo-item-01 text-gray-500 uppercase mb-1">Windbreaker (Black)</p>
-                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">아카이브 윈드브레이커</h3>
-                                <span class="typo-item-02 text-black">129,000 KRW</span>
-                            </div>
+                            <p class="typo-label-01 text-[#3C2A21]/60 mb-1 uppercase tracking-widest">WINDBREAKER</p>
+                            <h3 class="typo-item-01 text-[#111827] mb-1 group-hover:text-[#1A3626] transition-colors">Windbreaker Black</h3>
+                            <p class="typo-item-02 text-[#111827]">129,000 KRW</p>
                         </a>
                         <a href="#" class="group flex flex-col cursor-pointer">
-                            <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
-                                <img src="./images/WindGreen.png" alt="아카이브 윈드브레이커 딥그린" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
+                            <div class="w-full aspect-[4/5] bg-white overflow-hidden mb-4 relative border border-[#3C2A21]/10 shadow-sm flex items-center justify-center">
+                                <img src="./images/WindGreen.png" alt="Windbreaker Deep Green" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105" onerror="this.src='https://placehold.co/400x500/FFFFFF/1A3626?text=Windbreaker'">
                             </div>
-                            <div class="flex flex-col items-start mt-2">
-                                <p class="typo-item-01 text-gray-500 uppercase mb-1">Windbreaker (Deep Green)</p>
-                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">아카이브 윈드브레이커</h3>
-                                <span class="typo-item-02 text-black">129,000 KRW</span>
-                            </div>
+                            <p class="typo-label-01 text-[#3C2A21]/60 mb-1 uppercase tracking-widest">WINDBREAKER</p>
+                            <h3 class="typo-item-01 text-[#111827] mb-1 group-hover:text-[#1A3626] transition-colors">Windbreaker Deep Green</h3>
+                            <p class="typo-item-02 text-[#111827]">129,000 KRW</p>
                         </a>
                         <a href="#" class="group flex flex-col cursor-pointer">
-                            <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
-                                <img src="./images/WindBrown.png" alt="아카이브 윈드브레이커 다크브라운" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
+                            <div class="w-full aspect-[4/5] bg-white overflow-hidden mb-4 relative border border-[#3C2A21]/10 shadow-sm flex items-center justify-center">
+                                <img src="./images/WindBrown.png" alt="Windbreaker Dark Brown" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105" onerror="this.src='https://placehold.co/400x500/FFFFFF/1A3626?text=Windbreaker'">
                             </div>
-                            <div class="flex flex-col items-start mt-2">
-                                <p class="typo-item-01 text-gray-500 uppercase mb-1">Windbreaker (Dark Brown)</p>
-                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">아카이브 윈드브레이커</h3>
-                                <span class="typo-item-02 text-black">129,000 KRW</span>
-                            </div>
+                            <p class="typo-label-01 text-[#3C2A21]/60 mb-1 uppercase tracking-widest">WINDBREAKER</p>
+                            <h3 class="typo-item-01 text-[#111827] mb-1 group-hover:text-[#1A3626] transition-colors">Windbreaker Dark Brown</h3>
+                            <p class="typo-item-02 text-[#111827]">129,000 KRW</p>
                         </a>
                     </div>
                 </section>
 
-                <section id="sec-bottom" class="category-section mb-32">
-                    <div class="flex items-end gap-4 mb-12 pb-2 border-b border-[#3C2A21]/20">
-                        <!-- italic 제거 -->
-                        <h2 class="typo-sec-01 text-[#1A3626]">BOTTOM</h2>
-                        <span class="typo-item-01 text-gray-400 mb-2">2 Items</span>
+                <!-- BOTTOM -->
+                <section id="bottom" class="category-anchor mb-24">
+                    <div class="flex items-baseline justify-between border-b border-[#3C2A21]/20 pb-4 mb-8">
+                        <h2 class="typo-sec-02 text-[#1A3626]">BOTTOM</h2>
+                        <span class="typo-item-01 text-[#3C2A21]/60">2 Items</span>
                     </div>
                     
-                    <div class="grid grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-16 md:gap-x-10">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <a href="#" class="group flex flex-col cursor-pointer">
-                            <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
-                                <img src="./images/WhitePants.png" alt="투라인 트랙 팬츠 화이트" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
+                            <div class="w-full aspect-[4/5] bg-white overflow-hidden mb-4 relative border border-[#3C2A21]/10 shadow-sm flex items-center justify-center">
+                                <img src="./images/WhitePants.png" alt="Bottom White" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105" onerror="this.src='https://placehold.co/400x500/FFFFFF/1A3626?text=Bottom'">
                             </div>
-                            <div class="flex flex-col items-start mt-2">
-                                <p class="typo-item-01 text-gray-500 uppercase mb-1">Bottom (White)</p>
-                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">투라인 트랙 팬츠</h3>
-                                <span class="typo-item-02 text-black">79,000 KRW</span>
-                            </div>
+                            <p class="typo-label-01 text-[#3C2A21]/60 mb-1 uppercase tracking-widest">BOTTOM</p>
+                            <h3 class="typo-item-01 text-[#111827] mb-1 group-hover:text-[#1A3626] transition-colors">Bottom White</h3>
+                            <p class="typo-item-02 text-[#111827]">79,000 KRW</p>
                         </a>
                         <a href="#" class="group flex flex-col cursor-pointer">
-                            <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
-                                <img src="./images/BlackPants.png" alt="투라인 트랙 팬츠 블랙" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
+                            <div class="w-full aspect-[4/5] bg-white overflow-hidden mb-4 relative border border-[#3C2A21]/10 shadow-sm flex items-center justify-center">
+                                <img src="./images/BlackPants.png" alt="Bottom Black" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105" onerror="this.src='https://placehold.co/400x500/FFFFFF/1A3626?text=Bottom'">
                             </div>
-                            <div class="flex flex-col items-start mt-2">
-                                <p class="typo-item-01 text-gray-500 uppercase mb-1">Bottom (Black)</p>
-                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">투라인 트랙 팬츠</h3>
-                                <span class="typo-item-02 text-black">79,000 KRW</span>
-                            </div>
+                            <p class="typo-label-01 text-[#3C2A21]/60 mb-1 uppercase tracking-widest">BOTTOM</p>
+                            <h3 class="typo-item-01 text-[#111827] mb-1 group-hover:text-[#1A3626] transition-colors">Bottom Black</h3>
+                            <p class="typo-item-02 text-[#111827]">79,000 KRW</p>
                         </a>
                     </div>
                 </section>
 
-                <section id="sec-varsity" class="category-section mb-32">
-                    <div class="flex items-end gap-4 mb-12 pb-2 border-b border-[#3C2A21]/20">
-                        <!-- italic 제거 -->
-                        <h2 class="typo-sec-01 text-[#1A3626]">VARSITY JACKET</h2>
-                        <span class="typo-item-01 text-gray-400 mb-2">1 Item</span>
+                <!-- VARSITY JACKET -->
+                <section id="varsity" class="category-anchor mb-24">
+                    <div class="flex items-baseline justify-between border-b border-[#3C2A21]/20 pb-4 mb-8">
+                        <h2 class="typo-sec-02 text-[#1A3626]">VARSITY JACKET</h2>
+                        <span class="typo-item-01 text-[#3C2A21]/60">1 Item</span>
                     </div>
                     
-                    <div class="grid grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-16 md:gap-x-10">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <a href="#" class="group flex flex-col cursor-pointer">
-                            <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
-                                <img src="./images/Jumper.png" alt="아이코닉 바시티 재킷" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
+                            <div class="w-full aspect-[4/5] bg-white overflow-hidden mb-4 relative border border-[#3C2A21]/10 shadow-sm flex items-center justify-center">
+                                <img src="./images/Jumper.png" alt="Varsity Jacket Deep Green" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105" onerror="this.src='https://placehold.co/400x500/FFFFFF/1A3626?text=Varsity'">
                             </div>
-                            <div class="flex flex-col items-start mt-2">
-                                <p class="typo-item-01 text-gray-500 uppercase mb-1">Varsity Jacket (Deep Green)</p>
-                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">아이코닉 바시티 재킷</h3>
-                                <span class="typo-item-02 text-black">159,000 KRW</span>
-                            </div>
+                            <p class="typo-label-01 text-[#3C2A21]/60 mb-1 uppercase tracking-widest">VARSITY JACKET</p>
+                            <h3 class="typo-item-01 text-[#111827] mb-1 group-hover:text-[#1A3626] transition-colors">Varsity Jacket Deep Green</h3>
+                            <p class="typo-item-02 text-[#111827]">159,000 KRW</p>
                         </a>
                     </div>
                 </section>
 
-                <section id="sec-hoodie" class="category-section mb-10">
-                    <div class="flex items-end gap-4 mb-12 pb-2 border-b border-[#3C2A21]/20">
-                        <!-- italic 제거 -->
-                        <h2 class="typo-sec-01 text-[#1A3626]">HOODIE</h2>
-                        <span class="typo-item-01 text-gray-400 mb-2">2 Items</span>
+                <!-- HOODIE -->
+                <section id="hoodie" class="category-anchor mb-10">
+                    <div class="flex items-baseline justify-between border-b border-[#3C2A21]/20 pb-4 mb-8">
+                        <h2 class="typo-sec-02 text-[#1A3626]">HOODIE</h2>
+                        <span class="typo-item-01 text-[#3C2A21]/60">2 Items</span>
                     </div>
                     
-                    <div class="grid grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-16 md:gap-x-10">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <a href="#" class="group flex flex-col cursor-pointer">
-                            <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
-                                <img src="./images/GreenHoodie.png" alt="에센셜 아치 로고 후디 딥그린" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
+                            <div class="w-full aspect-[4/5] bg-white overflow-hidden mb-4 relative border border-[#3C2A21]/10 shadow-sm flex items-center justify-center">
+                                <img src="./images/GreenHoodie.png" alt="Hoodie Deep Green" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105" onerror="this.src='https://placehold.co/400x500/FFFFFF/1A3626?text=Hoodie'">
                             </div>
-                            <div class="flex flex-col items-start mt-2">
-                                <p class="typo-item-01 text-gray-500 uppercase mb-1">Hoodie (Deep Green)</p>
-                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">에센셜 아치 로고 후디</h3>
-                                <span class="typo-item-02 text-black">79,000 KRW</span>
-                            </div>
+                            <p class="typo-label-01 text-[#3C2A21]/60 mb-1 uppercase tracking-widest">HOODIE</p>
+                            <h3 class="typo-item-01 text-[#111827] mb-1 group-hover:text-[#1A3626] transition-colors">Hoodie Deep Green</h3>
+                            <p class="typo-item-02 text-[#111827]">79,000 KRW</p>
                         </a>
                         <a href="#" class="group flex flex-col cursor-pointer">
-                            <div class="w-full aspect-[3/4] bg-white border border-[#3C2A21]/10 overflow-hidden shadow-sm mb-4 relative">
-                                <img src="./images/BrownHoodie.png" alt="에센셜 아치 로고 후디 다크브라운" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-[1.05]">
+                            <div class="w-full aspect-[4/5] bg-white overflow-hidden mb-4 relative border border-[#3C2A21]/10 shadow-sm flex items-center justify-center">
+                                <img src="./images/BrownHoodie.png" alt="Hoodie Dark Brown" class="w-full h-full object-cover transform transition-transform duration-700 ease-out group-hover:scale-105" onerror="this.src='https://placehold.co/400x500/FFFFFF/1A3626?text=Hoodie'">
                             </div>
-                            <div class="flex flex-col items-start mt-2">
-                                <p class="typo-item-01 text-gray-500 uppercase mb-1">Hoodie (Dark Brown)</p>
-                                <h3 class="typo-item-02 group-hover:text-[#1A3626] transition-colors mb-1">에센셜 아치 로고 후디</h3>
-                                <span class="typo-item-02 text-black">79,000 KRW</span>
-                            </div>
+                            <p class="typo-label-01 text-[#3C2A21]/60 mb-1 uppercase tracking-widest">HOODIE</p>
+                            <h3 class="typo-item-01 text-[#111827] mb-1 group-hover:text-[#1A3626] transition-colors">Hoodie Dark Brown</h3>
+                            <p class="typo-item-02 text-[#111827]">79,000 KRW</p>
                         </a>
                     </div>
                 </section>
 
-            </div> <!-- 우측 상품 영역 래퍼 끝 -->
-        </div> <!-- 메인 콘텐츠 영역 래퍼 끝 -->
+            </div>
+        </div>
     </main>
 
-    <footer class="bg-[#111] text-[#F2EFE9] pt-20 pb-10 mt-20">
-        <div class="max-w-[1920px] mx-auto px-8 xl:px-16">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
-                <!-- 1. VERONE Info -->
-                <div>
-                    <h2 class="font-['Inika'] text-3xl font-bold tracking-widest mb-6">VERONE</h2>
-                    <p class="font-['Inter'] font-light text-[15px] text-gray-400 leading-relaxed break-keep">
-                        클래식 스포츠웨어, 새롭게 감각하다.<br>과거의 유산을 현대적으로 재해석합니다.
-                    </p>
+    <!-- Footer -->
+    <footer class="w-full bg-[#111827] py-[80px]">
+        <div class="layout-container grid grid-cols-12 gap-[24px]">
+            <!-- Col 1: Brand Info -->
+            <div class="col-span-12 md:col-span-3 flex flex-col pr-0 md:pr-10 mb-10 md:mb-0">
+                <h2 class="typo-sec-02 text-white mb-4">VERONE</h2>
+                <div class="typo-ft-link text-[#F2EFE9]/70 space-y-2">
+                    <p class="font-bold text-white mb-2 tracking-widest uppercase">ONE FOR ALL</p>
+                    <p>Retro sportswear inspired by heritage, team spirit, and everyday movement.</p>
+                    <p class="italic pt-2">Time Passes. Values Remain.</p>
                 </div>
-                
-                <!-- 2. HELP / CS CENTER -->
-                <div>
-                    <h3 class="font-['Inter'] font-bold text-[13px] tracking-[0.15em] mb-6 uppercase text-white">Help / CS Center</h3>
-                    <p class="font-['Inter'] font-bold text-2xl mb-2 text-white">1588-0000</p>
-                    <p class="font-['Inter'] font-light text-[15px] text-gray-400 leading-relaxed">
-                        월 - 금 10:00 - 17:00<br>주말 및 공휴일 휴무
-                    </p>
+            </div>
+            
+            <!-- Col 2: BRAND -->
+            <div class="col-span-6 md:col-span-2 md:col-start-5 flex flex-col mb-10 md:mb-0">
+                <h3 class="typo-ft-title text-white mb-6 uppercase">BRAND</h3>
+                <div class="flex flex-col gap-3 typo-ft-link text-[#F2EFE9]/70">
+                    <a href="#" class="hover:text-white transition-colors">About VERONE</a>
+                    <a href="#" class="hover:text-white transition-colors">Heritage</a>
+                    <a href="#" class="hover:text-white transition-colors">Archive</a>
+                    <a href="#" class="hover:text-white transition-colors">Lookbook</a>
                 </div>
-                
-                <!-- 3. SHOP -->
-                <div>
-                    <h3 class="font-['Inter'] font-bold text-[13px] tracking-[0.15em] mb-6 uppercase text-white">Shop</h3>
-                    <ul class="font-['Inter'] font-light text-[15px] text-gray-400 space-y-4">
-                        <li><a href="#" class="hover:text-white transition-colors">All Products</a></li>
-                        <li><a href="#sec-uniform" class="hover:text-white transition-colors">Uniform</a></li>
-                        <li><a href="#sec-windbreaker" class="hover:text-white transition-colors">Windbreaker</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Archive Sale</a></li>
-                    </ul>
+            </div>
+            
+            <!-- Col 3: SHOP -->
+            <div class="col-span-6 md:col-span-2 flex flex-col mb-10 md:mb-0">
+                <h3 class="typo-ft-title text-white mb-6 uppercase">SHOP</h3>
+                <div class="flex flex-col gap-3 typo-ft-link text-[#F2EFE9]/70">
+                    <a href="#" class="hover:text-white transition-colors">Best Seller</a>
+                    <a href="#" class="hover:text-white transition-colors">Jerseys</a>
+                    <a href="#" class="hover:text-white transition-colors">Jackets</a>
+                    <a href="#" class="hover:text-white transition-colors">Hoodies</a>
+                    <a href="#" class="hover:text-white transition-colors">Bottoms</a>
                 </div>
-                
-                <!-- 4. ABOUT VERONE -->
-                <div>
-                    <h3 class="font-['Inter'] font-bold text-[13px] tracking-[0.15em] mb-6 uppercase text-white">About Verone</h3>
-                    <ul class="font-['Inter'] font-light text-[15px] text-gray-400 space-y-4">
-                        <li><a href="#" class="text-[#D4AF37] hover:text-white transition-colors">Brand Story</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Journal</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Stockists</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
-                    </ul>
+            </div>
+            
+            <!-- Col 4: SUPPORT -->
+            <div class="col-span-6 md:col-span-2 flex flex-col">
+                <h3 class="typo-ft-title text-white mb-6 uppercase">SUPPORT</h3>
+                <div class="flex flex-col gap-3 typo-ft-link text-[#F2EFE9]/70">
+                    <a href="#" class="hover:text-white transition-colors">Notice</a>
+                    <a href="#" class="hover:text-white transition-colors">FAQ</a>
+                    <a href="#" class="hover:text-white transition-colors">Shipping</a>
+                    <a href="#" class="hover:text-white transition-colors">Contact</a>
                 </div>
             </div>
 
-            <!-- Bottom Row: Copyright & Links -->
-            <div class="flex flex-col-reverse md:flex-row justify-between items-center border-t border-gray-800 pt-8 font-['Inter'] text-[13px] text-gray-500">
-                <div class="mt-6 md:mt-0 uppercase tracking-wide">
-                    &copy; 2026 VERONE STUDIO. ALL RIGHTS RESERVED.
+            <!-- Col 5: SOCIAL -->
+            <div class="col-span-6 md:col-span-2 flex flex-col">
+                <h3 class="typo-ft-title text-white mb-6 uppercase">SOCIAL</h3>
+                <div class="flex flex-col gap-3 typo-ft-link text-[#F2EFE9]/70">
+                    <a href="#" class="hover:text-white transition-colors">Instagram</a>
+                    <a href="#" class="hover:text-white transition-colors">YouTube</a>
+                    <a href="#" class="hover:text-white transition-colors">Pinterest</a>
                 </div>
-                
-                <div class="flex items-center space-x-8">
-                    <!-- Social Icons (SVG 적용 완료) -->
-                    <div class="flex space-x-5 text-gray-400">
-                        <a href="#" class="hover:text-white transition-colors" title="Instagram">
-                            <svg class="w-[18px] h-[18px]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="18" height="18" x="3" y="3" rx="4"></rect><circle cx="12" cy="12" r="4"></circle><path d="M16.5 7.5v.01"></path></svg>
-                        </a>
-                        <a href="#" class="hover:text-white transition-colors" title="Twitter">
-                            <svg class="w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
-                        </a>
-                        <a href="#" class="hover:text-white transition-colors" title="YouTube">
-                            <svg class="w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
-                        </a>
-                    </div>
-                    
-                    <div class="flex space-x-5 font-light">
-                        <a href="#" class="hover:text-white transition-colors">이용약관</a>
-                        <a href="#" class="hover:text-white transition-colors">개인정보처리방침</a>
-                    </div>
+            </div>
+
+            <!-- Bottom Row: Copyright & Policy -->
+            <div class="col-span-12 mt-16 pt-8 border-t border-[#F2EFE9]/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="typo-ft-copy text-[#F2EFE9]/50">&copy; 2026 VERONE STUDIO. All Rights Reserved.</p>
+                <div class="flex items-center gap-6 typo-ft-link text-[#F2EFE9]/50 text-xs">
+                    <a href="#" class="hover:text-white transition-colors">Terms of Use</a>
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">이용약관</a>
+                    <a href="#" class="hover:text-white transition-colors">개인정보처리방침</a>
                 </div>
             </div>
         </div>
     </footer>
-
-    <!-- fixed 에서 sticky 컨테이너 내부 절대 배치 방식으로 변경하여 카테고리 좌측 라인과 완벽히 정렬 -->
-    <div id="scrollToTopContainer" class="fixed bottom-0 left-0 w-full pointer-events-none z-50 transition-transform duration-0">
-        <div class="max-w-[1920px] mx-auto w-full px-8 xl:px-16 relative">
-            <button id="scrollToTopBtn" class="absolute bottom-10 pointer-events-auto px-6 py-3 bg-[#1A3626] text-[#F2EFE9] border-2 border-black hover:bg-black hover:text-white transition-all duration-300 opacity-0 invisible flex items-center justify-center typo-item-01 tracking-[0.2em] uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,0.5)]" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                ↑ Back To Top
-            </button>
-        </div>
-    </div>
-
-    <!-- Scroll to Top 작동 스크립트 -->
-    <script>
-        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-        const scrollToTopContainer = document.getElementById('scrollToTopContainer');
-        const footer = document.querySelector('footer');
-
-        window.addEventListener('scroll', () => {
-            // 1. 버튼 표시/숨김 로직
-            if (window.scrollY > 400) {
-                scrollToTopBtn.classList.remove('opacity-0', 'invisible');
-                scrollToTopBtn.classList.add('opacity-100', 'visible');
-            } else {
-                scrollToTopBtn.classList.remove('opacity-100', 'visible');
-                scrollToTopBtn.classList.add('opacity-0', 'invisible');
-            }
-
-            // 2. 푸터 침범 방지 로직 (TranslateY 활용)
-            if (footer) {
-                const footerRect = footer.getBoundingClientRect();
-                const viewportHeight = window.innerHeight;
-                
-                // 푸터가 화면 하단에 보이기 시작하면, 보이는 영역만큼 버튼 컨테이너를 밀어 올립니다.
-                if (footerRect.top < viewportHeight) {
-                    const overlap = viewportHeight - footerRect.top;
-                    scrollToTopContainer.style.transform = `translateY(-${overlap}px)`;
-                } else {
-                    scrollToTopContainer.style.transform = 'translateY(0)';
-                }
-            }
-        });
-    </script>
 
 </body>
 </html>
